@@ -1,19 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Message() {
+function Message({text, name, image, timestamp}) {
     return (
+       
         <Container>
             <UserAvatar>
-                <img src="https://randomuser.me/api/portraits/women/81.jpg"></img>
+                <img src={image}></img>
             </UserAvatar>
             <MessageContent>
                 <Name>
-                    Humaira
-                    <span>23/2/2021 11:32:34 AM</span>
+                    {name}
+                    <span>{new Date(timestamp.toDate()).toUTCString()}</span>
                 </Name>
                 <Text>
-                    Hey Its interesting 
+                   {text}
                 </Text>
             </MessageContent>
         </Container>
